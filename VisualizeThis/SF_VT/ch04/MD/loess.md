@@ -1,0 +1,43 @@
+
+<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+
+* [Load data](#load-data)
+* [Plain scatter plot](#plain-scatter-plot)
+* [Fitted linear line](#fitted-linear-line)
+* [Scatter plot with loess](#scatter-plot-with-loess)
+* [Fix y-axis to start at zero](#fix-y-axis-to-start-at-zero)
+* [Change color](#change-color)
+
+<!-- tocstop -->
+
+
+# Load data
+```{r}
+unemployment <- read.csv("http://datasets.flowingdata.com/unemployment-rate-1948-2010.csv", sep=",")
+unemployment[1:10,]
+
+```
+# Plain scatter plot
+```{r}
+plot(1:length(unemployment$Value), unemployment$Value)
+
+```
+# Fitted linear line
+```{r}
+plot(1:length(unemployment$Value), unemployment$Value)
+lines(c(1,746), c(4.889523,6.42593))
+```
+# Scatter plot with loess
+```{r}
+scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value)
+
+```
+# Fix y-axis to start at zero
+```{r}
+scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value, ylim=c(0,11), degree=2)
+
+```
+# Change color
+```{r}
+scatter.smooth(x=1:length(unemployment$Value), y=unemployment$Value, ylim=c(0,11), degree=2, col="#CCCCCC", span=0.5)
+```

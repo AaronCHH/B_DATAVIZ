@@ -1,0 +1,17 @@
+---
+title: "timeseries"
+output: html_notebook
+---
+
+# Load data
+```{r}
+population <- read.csv("data/world-population.csv", sep=",", header=TRUE)
+```
+# Default plot
+```{r}
+plot(population$Year, population$Population, type="l")
+```
+# Adjust axis
+```{r}
+plot(population$Year, population$Population, type="l", ylim=c(0, 7000000000), xlab="Year", ylab="Population")
+```
